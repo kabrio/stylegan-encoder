@@ -7,6 +7,8 @@
 
 """Minimal script for generating an image using pre-trained StyleGAN generator."""
 
+import runway
+from runway.data_types import number, text, image
 import os
 import pickle
 import numpy as np
