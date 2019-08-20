@@ -1,5 +1,5 @@
 import runway
-from runway.data_types import category, vector, image
+from runway.data_types import number, text, image
 import os
 import pickle
 import PIL.Image

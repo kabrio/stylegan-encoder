@@ -7,8 +7,6 @@
 
 """Minimal script for generating an image using pre-trained StyleGAN generator."""
 
-import runway
-from runway.data_types import number, text, image
 import os
 import pickle
 import numpy as np
@@ -16,6 +14,8 @@ import PIL.Image
 import dnnlib
 import dnnlib.tflib as tflib
 import config
+import runway
+
 
 @runway.setup()
 
@@ -37,9 +37,9 @@ def setup():
     return Gs
 
 sample_description = "Generate a new image based on a something I don't yet fully understand."
-@stylegan.command("main",
+@runway.command("generate",
                 inputs=sample_inputs,
-                outputs=sample_outputs,
+                outputs={'image': runway.image},
                 description=sample_description)
 def main(Gs):
     # Pick latent vector.
@@ -56,4 +56,4 @@ def main(Gs):
     PIL.Image.fromarray(images[0], 'RGB').save(png_filename)
 
 if __name__ == "__main__":
-    stylegan.run()
+    runway.run()
