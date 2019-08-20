@@ -32,8 +32,6 @@ files:
 build_steps:
     # We recommend pinning to a specific version of the Runway Model SDK until
     # the first major release, as breaking changes may be introduced to the SDK
-    - pip install cuda
-    - pip install cudnn
     - pip install runway-python
     - pip install -r requirements.txt
     # The if_gpu and if_cpu directives can be used to run build steps
